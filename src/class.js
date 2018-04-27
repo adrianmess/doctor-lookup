@@ -1,4 +1,4 @@
-class Class {
+class BetterDoctor {
   constructor(parameter) {
     this.prop = parameter;
   }
@@ -8,4 +8,4 @@ class Class {
   }
 }
 
-export { Class };
+export { BetterDoctor };
