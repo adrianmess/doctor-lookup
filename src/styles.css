@@ -1,1 +1,28 @@
+body {
+  font-family: ProximaNovaReg, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h3 {
+  color: #bb3794;
+}
+th {
+  text-align: left;
+}
+table {
+  font-size: 14px;
+}
+td,th {
+  height: 30px;
+  border-bottom: 1px dotted #d6d6d6;
+  padding-right: 20px;
+}
+a {
+    text-decoration: none;
+}
 
+a, a:visited {
+    color: rgb(84, 180, 210);
+}
+
+a:hover {
+    color: rgb(51,159,192);
+}
