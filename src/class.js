@@ -1,7 +1,5 @@
 class BetterDoctor {
-  constructor(parameter) {
-    this.prop = parameter;
-  }
+  constructor() {}
 
   search(dName, condition) {
     return new Promise(function(resolve, reject){
