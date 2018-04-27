@@ -14,15 +14,16 @@ $(document).ready(function() {
     let Mcondition = $('#Mcondition').val();
     console.log(Dname);
     console.log(Mcondition);
-    console.log(doctorSearch);
     $('#Dname').val('');
     $('#Mcondition').val('');
-    console.log($('#Dname').val());
+    console.log($('#Dname').val(''));
 
     doctorSearch.then(function(response){
       let body = JSON.parse(response);
-      console.log(body);
-
+      let i;
+      for(i = 0; i <= body.data.length; i++){
+      console.log(`${body}`);
+    }
     })
 
   });
