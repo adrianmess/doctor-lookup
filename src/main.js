@@ -2,29 +2,20 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
-import { BetterDoctor } from './class.js';
 
 $(document).ready(function() {
-  $("#buttonSub").click(function(){
-    // event.preventDefault();
-    let doctorApi = new BetterDoctor();
-    let doctorSearch = doctorApi.search(Dname, Mcondition);
-    // Note: doctorSearch = Promise from class.js
+  $('#buttonSub').click(function() {
     let Dname = $("#Dname").val();
     let Mcondition = $('#Mcondition').val();
-    console.log(Dname);
-    console.log(Mcondition);
     $('#Dname').val('');
     $('#Mcondition').val('');
-    console.log($('#Dname').val(''));
 
-    doctorSearch.then(function(response){
-      let body = JSON.parse(response);
-      let i;
-      for(i = 0; i <= body.data.length; i++){
-      console.log(`${body}`);
-    }
-    })
 
+    $.get(`https://api.betterdoctor.com/2016-03-01/doctors?name=${Dname}&query=${Mcondition}&location=45.539%2C-122.604%2C25&user_location=45.539%2C-122.604&sort=best-match-asc&skip=0&limit=10&user_key=22065b1d7a0d09da2af7c21410b2ddad`).then(function(response) {
+      $('.showResults').text(`${response.body}`);
+      console.log(`${response}`)
+    }).fail(function(error) {
+      $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
+    });
   });
 });
