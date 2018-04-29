@@ -19,7 +19,8 @@ $(document).ready(function() {
 
       for (var index in response.data) {
         let test = response.data[index].profile.first_name;
-        $('.showResults').text(`${response.data[index].profile.first_name}`);
+        $('.showResults').text(`${response.data[index].profile.first_name} `+`${response.data[index].profile.last_name}`);
+
         // console.log(response[index]);
         console.log(test);
       }
