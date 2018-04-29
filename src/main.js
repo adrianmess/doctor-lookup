@@ -9,11 +9,17 @@ $(document).ready(function() {
     let Mcondition = $('#Mcondition').val();
     $('#Dname').val('');
     $('#Mcondition').val('');
-
+    console.log(Dname);
+    console.log(Mcondition);
+    var url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${Dname}&query=${Mcondition}&location=45.539%2C-122.604%2C25&user_location=45.539%2C-122.604&sort=best-match-asc&skip=0&limit=10&user_key=22065b1d7a0d09da2af7c21410b2ddad`;
+    console.log(url);
 
     $.get(`https://api.betterdoctor.com/2016-03-01/doctors?name=${Dname}&query=${Mcondition}&location=45.539%2C-122.604%2C25&user_location=45.539%2C-122.604&sort=best-match-asc&skip=0&limit=10&user_key=22065b1d7a0d09da2af7c21410b2ddad`).then(function(response) {
-      $('.showResults').text(`${response.body}`);
-      console.log(`${response}`)
+      // $('.showResults').text(`${response.body}`);
+      // console.log(`${response}`)
+      for (var index in response) {
+        console.log(response[index]);
+      }
     }).fail(function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.responseText}. Please try again.`);
     });
