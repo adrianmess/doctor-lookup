@@ -30,8 +30,12 @@ $(document).ready(function() {
       // var allData = response.data;
       // console.log(allData);
 
-      $.each(response.data, function(i, practices){
-        console.log(practices.profile.first_name + ' ' + practices.profile.last_name);
+      $.each(response.data, function(i, data){
+        // $.each(practices, function(i2, ))
+        var firstName = data.profile.first_name;
+        var lastName = 
+        $('.showResults').append(data.profile.first_name + ' ' + data.profile.last_name + '<br>' + 'Contact Info: ' + '<br>' + 'Phone: ' + data.practices[0].phones[0].number + '<br>'  );
+        console.log(data.practices[1].visit_address.state);
       });
 
 
