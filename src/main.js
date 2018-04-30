@@ -33,9 +33,18 @@ $(document).ready(function() {
       $.each(response.data, function(i, data){
         // $.each(practices, function(i2, ))
         var firstName = data.profile.first_name;
-        var lastName = 
-        $('.showResults').append(data.profile.first_name + ' ' + data.profile.last_name + '<br>' + 'Contact Info: ' + '<br>' + 'Phone: ' + data.practices[0].phones[0].number + '<br>'  );
-        console.log(data.practices[1].visit_address.state);
+        var lastName = data.profile.last_name;
+        var contact = ('<br>' + 'Contact Info: ' + '<br>' + 'Phone: ');
+        var phone = data.practices[0].phones[0].number;
+        let city = data.practices[0].visit_address.city;
+        let state = data.practices[0].visit_address.state;
+        let street = data.practices[0].visit_address.street;
+        let zip = data.practices[0].visit_address.zip;
+        let address = (street + '<br>' + city + ', ' + state + ', ' + zip);
+        let website = ('Website: ' + data.practices[0].website;);
+        // var address = data.practices[1].visit_address
+        $('.showResults').append(firstName + ' ' + lastName + contact + phone + '<br>' + address + '<br>' + website + '<p>');
+        console.log(data.practices[0].website);
       });
 
 
