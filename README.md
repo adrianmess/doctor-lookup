@@ -15,7 +15,7 @@ The BetterDoctor API will be used to retrieve this information.
 | Name of Doctor submitted and list of Doctors with that name returned | Last-Name: Johnson | Returned: List of Dr's with Last-Name of Johnson
 
 * If query response includes any doctors, a certain
-  *  first name, last name, address, phone number, website and whether or not the doctor is accepting new patients
+  *  RETURN: first name, last name, address, phone number, website and whether or not the doctor is accepting new patients
 * If the API call results in an error, the application should return a notification that states what the error is.
 * If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria. (This is not an error so it should be handled separately from any errors.)
 
