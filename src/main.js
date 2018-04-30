@@ -15,6 +15,7 @@ $(document).ready(function() {
       $.each(response.data, function(i, data){
         var firstName = data.profile.first_name;
         var lastName = data.profile.last_name;
+        var picture = ('<img src=\'' + data.profile.image_url +'\'>');
         var contact = ('<br>' + 'Contact Info: ' + '<br>' + 'Phone: ');
         var phone = data.practices[0].phones[0].number;
         let city = data.practices[0].visit_address.city;
@@ -33,7 +34,7 @@ $(document).ready(function() {
           }
         };
         let finalSite = website(siteUnd);
-        $('.showResults').append('<span class=\'clear\'>' + '<span class=\'names\'>' + firstName + ' ' + lastName + '</span>' + contact + phone + '<br>' + address + '<br>' + 'Accepting new patients: ' + newP + '<br>' + 'Website: ' + finalSite + '<p></span>');
+        $('.showResults').append('<span class=\'clear\'><table><th>' + '<span class=\'names\'>' + firstName + ' ' + lastName + '</span>' + contact + phone + '<br>' + address + '<br>' + 'Accepting new patients: ' + newP + '<br>' + 'Website: ' + finalSite + '<p></th><td>' + picture + '</td></table></span>');
       });
 
     }).fail(function(error) {

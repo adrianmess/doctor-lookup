@@ -1,6 +1,10 @@
-body {
+body, th {
   font-family: ProximaNovaReg, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  text-align: center;
+  font-weight: normal;
+}
+
+div.row {
+  margin-right: 80px;
 }
 h3 {
   text-align: center;
@@ -15,7 +19,7 @@ h5 {
 
 
 
-label.Dname, input#Dname {
+label.Dname {
   margin-top: 20px;
 }
 th {
@@ -41,15 +45,12 @@ a:hover {
   color: rgb(51,159,192);
 }
 
-label {
-  width:180px;
-  clear:left;
-  text-align:right;
-  padding-right:10px;
-}
 
 input, label, button {
-  float:left;
+
+  resize: horizontal;
+  display: flex;
+
 }
 
 button {
@@ -62,5 +63,6 @@ span.names {
 }
 
 div.showResults {
-  margin-top: 120px;
+  align-items: center;
+  margin-top: 100px;
 }
