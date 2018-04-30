@@ -17,13 +17,24 @@ $(document).ready(function() {
       // $('.showResults').text(`${response.data}`);
       // console.log(`${response}`)
 
-      for (var index in response.data) {
-        let test = response.data[index].profile.first_name + ' ' + response.data[index].profile.last_name;
-        // $('.showResults').text(`${response.data[index].profile.first_name} `+`${response.data[index].profile.last_name}`);
-        $('.showResults').append(test + '<br>');
-        // console.log(response[index]);
-        console.log(test);
-      }
+      // for (var index in response.data) {
+      //   // let test = response.data[index].profile.first_name + ' ' + response.data[index].profile.last_name + '<br>' + response.data[index].practices.name + '<br>' ;
+      //    let practice = response.data[index].practices.name;
+      //
+      //
+      //   // $('.showResults').append(test + '<br>');
+      //
+      //   console.log(practice);
+      // }
+
+      // var allData = response.data;
+      // console.log(allData);
+
+      $.each(response.data, function(i, practices){
+        console.log(practices);
+      });
+
+
 
       // for (var index in response) {
       //   for ( var practices in index) {
