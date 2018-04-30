@@ -1,5 +1,6 @@
 body {
   font-family: ProximaNovaReg, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 h3 {
   text-align: center;
@@ -7,9 +8,9 @@ h3 {
 }
 
 h5 {
-  font-size: 14px;
-  margin-left: 30%;
-  margin-right: 30%;
+  font-size: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 
@@ -29,34 +30,37 @@ td,th {
   padding-right: 20px;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a, a:visited {
-    color: rgb(84, 180, 210);
+  color: rgb(84, 180, 210);
 }
 
 a:hover {
-    color: rgb(51,159,192);
+  color: rgb(51,159,192);
 }
 
 label {
-    width:180px;
-    clear:left;
-    text-align:right;
-    padding-right:10px;
+  width:180px;
+  clear:left;
+  text-align:right;
+  padding-right:10px;
 }
 
-input, label {
-    float:left;
+input, label, button {
+  float:left;
 }
 
 button {
-  margin-top: 40px;
-  margin-left: -170px;
-  /* float:left; */
+  margin-top: 10px;
+
 }
 
 span.names {
   font-weight: bold;
+}
+
+div.showResults {
+  margin-top: 120px;
 }
