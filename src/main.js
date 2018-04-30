@@ -31,7 +31,7 @@ $(document).ready(function() {
       // console.log(allData);
 
       $.each(response.data, function(i, practices){
-        console.log(practices);
+        console.log(practices.profile.first_name + ' ' + practices.profile.last_name);
       });
 
 
