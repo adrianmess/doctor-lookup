@@ -18,9 +18,9 @@ $(document).ready(function() {
       // console.log(`${response}`)
 
       for (var index in response.data) {
-        let test = response.data[index].profile.first_name;
-        $('.showResults').text(`${response.data[index].profile.first_name} `+`${response.data[index].profile.last_name}`);
-
+        let test = response.data[index].profile.first_name + ' ' + response.data[index].profile.last_name;
+        // $('.showResults').text(`${response.data[index].profile.first_name} `+`${response.data[index].profile.last_name}`);
+        $('.showResults').append(test + '<br>');
         // console.log(response[index]);
         console.log(test);
       }
