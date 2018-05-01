@@ -25,6 +25,22 @@ The BetterDoctor API will be used to retrieve this information.
 * To view project, _open in web browser_
   *  https://adrianmess.github.io/doctor-lookup/
 
+  ### Install project locally:
+
+      * Clone this project
+      *
+
+#### API Key
+
+You will need an API Key from BetterDoctor. Visit the [BetterDoctor API] (https://developer.betterdoctor.com/) site and click “Get a free API key”.
+  After you sign up, your API key will be listed on the front page under **CREDENTIALS** (ex: “**Key** 22065b1d…..”) or under My Account > Applications.
+
+  How to use your API Key:
+    * Create a .env file in the root directory of the project.
+    * Add the API key in the .env file as shown below. No brackets:
+    ```
+    exports.apiKey=[YOUR-API-KEY]
+    ```
 
 * To Install locally:
   * Clone this repository
