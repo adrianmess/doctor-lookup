@@ -13,7 +13,7 @@ $(document).ready(function() {
     $('#medicalCondition').val('');
 
     let bDoctorApi = BetterDoctor();
-    let bDoctorData = BetterDoctor.doctorCall(doctorName, medicalCondition);
+    let bDoctorData = bDoctorApi.doctorCall(doctorName, medicalCondition);
 
     // function doctorCall() {
     //   return new Promise(function(resolve, reject) {
