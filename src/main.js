@@ -12,6 +12,9 @@ $(document).ready(function() {
     $('#doctorName').val('');
     $('#medicalCondition').val('');
 
+    let bDoctorApi = BetterDoctor();
+    let bDoctorData = BetterDoctor.doctorCall(doctorName, medicalCondition);
+
     // function doctorCall() {
     //   return new Promise(function(resolve, reject) {
     //     let request = new XMLHttpRequest();
@@ -29,8 +32,8 @@ $(document).ready(function() {
     //   });
     // }
 
-    doctorCall ()
-      .then(function(response) {
+
+      bDoctorData.then(function(response) {
         let body = JSON.parse(response);
         console.log(body);
       $.each(body.data, function(i, data){
