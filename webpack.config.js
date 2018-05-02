@@ -16,17 +16,17 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
+    new Dotenv(),
     new CopyWebpackPlugin([
       { from: 'src/img', to: 'img'}
     ]),
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'project',
+      title: 'doctor-lookup-new',
       template: './src/index.html',
       inject: 'body'
     }),
-    new Dotenv()
   ],
   module: {
     rules: [
