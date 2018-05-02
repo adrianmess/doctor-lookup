@@ -2,20 +2,20 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from 'jquery';
-// import { BetterDoctor } from './class.js';
+import { BetterDoctor } from './class.js';
 
 $(document).ready(function() {
   $('#buttonSub').click(function() {
     $('.clear').remove();
-    let Dname = $("#Dname").val();
-    let Mcondition = $('#Mcondition').val();
-    $('#Dname').val('');
-    $('#Mcondition').val('');
+    let doctorName = $("#doctorName").val();
+    let medicalCondition = $('#medicalCondition').val();
+    $('#doctorName').val('');
+    $('#medicalCondition').val('');
 
     function doctorCall() {
       return new Promise(function(resolve, reject) {
         let request = new XMLHttpRequest();
-        let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${Dname}&query=${Mcondition}&location=45.539%2C-122.604%2C25&user_location=45.539%2C-122.604&sort=best-match-asc&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
+        let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&query=${medicalCondition}&location=45.539%2C-122.604%2C25&user_location=45.539%2C-122.604&sort=best-match-asc&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
 
         request.onload = function() {
           if (this.status === 200) {
