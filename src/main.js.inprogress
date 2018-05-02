@@ -12,6 +12,9 @@ $(document).ready(function() {
     $('#Dname').val('');
     $('#Mcondition').val('');
 
+    let request = new XMLHttpRequest();
+    let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${Dname}&query=${Mcondition}&location=45.539%2C-122.604%2C25&user_location=45.539%2C-122.604&sort=best-match-asc&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
+
     function doctorCall() {
       return new Promise(function(resolve, reject) {
         let request = new XMLHttpRequest();
@@ -31,33 +34,32 @@ $(document).ready(function() {
 
     doctorCall ()
       .then(function(response) {
-        let body = JSON.parse(response);
-        console.log(body);
-      $.each(body.data, function(i, data){
-        let firstName = data.profile.first_name;
-        let lastName = data.profile.last_name;
-        let picture = ('<img src=\'' + data.profile.image_url +'\'>');
-        let contact = ('<br>' + 'Contact Info: ' + '<br>' + 'Phone: ');
-        let phone = data.practices[0].phones[0].number;
+        let response = JSON.parse(response);
+        console.log(response);
+      $.each(response.data, function(i, data){
+        var firstName = data.profile.first_name;
+        var lastName = data.profile.last_name;
+        var picture = ('<img src=\'' + data.profile.image_url +'\'>');
+        var contact = ('<br>' + 'Contact Info: ' + '<br>' + 'Phone: ');
+        var phone = data.practices[0].phones[0].number;
         let city = data.practices[0].visit_address.city;
         let state = data.practices[0].visit_address.state;
         let street = data.practices[0].visit_address.street;
         let zip = data.practices[0].visit_address.zip;
         let address = (street + '<br>' + city + ', ' + state + ', ' + zip);
         let newP = data.practices[0].accepts_new_patients;
-        let websiteLink = data.practices[0].website;
-        let showSiteLink = function (websiteLink) {
-          let siteLink = websiteLink;
-          if (typeof siteLink === "undefined") {
+        let siteUnd = data.practices[0].website;
+        let website = function (siteUnd) {
+          let missing = siteUnd;
+          if (typeof missing === "undefined") {
             return "No website listed"
           } else {
-            return siteLink;
+            return missing;
           }
         };
-        let finalSite = showSiteLink(websiteLink);
+        let finalSite = website(siteUnd);
         $('.showResults').append('<span class=\'clear\'><table><th>' + '<span class=\'names\'>' + firstName + ' ' + lastName + '</span>' + contact + phone + '<br>' + address + '<br>' + 'Accepting new patients: ' + newP + '<br>' + 'Website: ' + finalSite + '<p></th><td>' + picture + '</td></table></span>');
       });
-    });
-
+    }
   });
 });
