@@ -5,32 +5,34 @@ body, th {
 
 html, body {
   min-height: 100%;
+
 }
 body {
   background: url("./img/background.jpg");
-
+  background-attachment: fixed;
   -webkit-background-size: cover;
- -moz-background-size: cover;
- -o-background-size: cover;
- background-size: cover;
-  background-repeat:   no-repeat;
-}
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   background-repeat:   no-repeat;
+ }
 
-.jumbotron {
-  height: 100px;
+.custom-card {
+  background-color: rgba(47, 53, 71, 0.6);
+  color: white;
+  max-width: 40%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  margin-top: 10%;
 }
-
-h3.display-4 {
-  margin-top: -3%;
-}
-
 .lead {
   text-align: center;
 }
 
 div.col-md-8 {
   margin-right: 50%;
-  transform: translate(50%, 10%)
+  transform: translate(25%, 1%)
 }
 h3, h1 {
   text-align: center;
@@ -42,8 +44,6 @@ h5 {
   margin-left: 20%;
   margin-right: 20%;
 }
-
-
 
 label.Dname {
   margin-top: 20px;
@@ -71,17 +71,20 @@ a:hover {
   color: rgb(51,159,192);
 }
 
-
 input, label, button {
 
   resize: horizontal;
   display: flex;
-
 }
 
 button {
   margin-top: 10px;
+}
 
+.btn-secondary {
+    color: #bb3794;;
+    background-color: #fff;
+    border-color: #6c757d;
 }
 
 span.names {
@@ -93,13 +96,62 @@ div.showResults {
   margin-top: 100px;
 }
 
-
 #doctorInfo {
   width: 25rem;
+    float: right;
 }
 
 /* Hide card  */
 #doctorInfo  {
   justify-content: center;
   display: none;
+}
+
+@media  screen and (max-width: 575.98px),
+{
+  .display-4 {
+    font-size: 20px;
+  }
+  .lead {
+    font-size: 10px;
+    font-weight: 400;
+  }
+}
+
+@media  screen and (min-width:575.99px) and (max-width: 768.99px),
+{
+  .display-4 {
+    font-size: 25px;
+      margin-top: -8%;
+  }
+  .jumbotron {
+    height: 100px;
+  }
+
+  .lead {
+    font-size: 15px;
+    font-weight: 200;
+  }
+}
+
+@media  screen and (min-width:768px) and (max-width: 999px),
+{
+  .display-4 {
+    font-size: 35px;
+      margin-top: -4%;
+  }
+  .jumbotron {
+    height: 100px;
+  }
+  .lead {
+    font-size: 15px;
+    font-weight: 200;
+  }
+}
+
+@media  screen and (min-width:1000.99px)
+{
+  div.jumbotron.jumbotron-fluid {
+    padding: 15px;
+  }
 }

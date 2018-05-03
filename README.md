@@ -52,7 +52,7 @@ This website utilizes the [BetterDoctor API](https://developer.betterdoctor.com/
   * Install:
              $ npm install
   * Run:
-             $ npm serve
+             $ npm start
 
 
 ## Specifications
