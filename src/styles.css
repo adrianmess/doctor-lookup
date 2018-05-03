@@ -3,6 +3,19 @@ body, th {
   font-weight: normal;
 }
 
+html, body {
+  min-height: 100%;
+}
+body {
+  background: url("./img/background.jpg");
+  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+  background-repeat:   no-repeat;
+}
+
+
 div.row {
   margin-right: 80px;
 }
