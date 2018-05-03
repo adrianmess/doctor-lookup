@@ -1,51 +1,75 @@
-# **[Doctor Lookup]**
+# **Doctor Lookup**
+  Powered By: [BetterDoctor API](https://developer.betterdoctor.com/) [logo]: http://betterdoctor.com/assets/img/bd-logo.svg
 
 #### By Adrian Messado
 [Adrian Messado](https://github.com/adrianmess)
 ## Description
-A website where users may enter a medical issue (ie: “sore throat”, "rash", etc.) into a form, submit it, and receive a list of doctors in your city (Portland or Seattle depending on where you are) who can treat their medical issue.
+A website where users can enter a medical condition or the name of a Doctor and list of the top 10 Doctors that match the search criteria will be shown. The data returned will contain the name, contact information, business address and a link to their website if one is available.
 
-The BetterDoctor API will be used to retrieve this information.
+* Search results are limited to a 25 mile radius of Portland, OR.  
+
+This website utilizes the [BetterDoctor API](https://developer.betterdoctor.com/) for retrieval of provider data.
+
+
+## Setup/Installation Requirements
+
+#### Prerequisites
+
+-  [NPM 5.0+](https://www.npmjs.com/get-npm)
+-  [Git](https://git-scm.com/downloads)
+-  [BetterDoctor](https://developer.betterdoctor.com/) API Key
+
+#### Clone
+  * Clone this repo to your local machine using https://github.com/adrianmess/doctor-lookup
+        $ git clone https://github.com/adrianmess/doctor-lookup
+
+
+#### BetterDoctor API Key
+
+  After you sign up your API key will be listed on the main developer page under **CREDENTIALS**.
+  *  
+
+
+    CREDENTIALS
+    Key: 22065b1d...
+
+  How to use your API Key:
+  > Create a .env file in the root directory of the project.
+    > Add the API key in the .env file as shown below. No brackets:
+    ```
+    exports.apiKey=[YOUR-API-KEY]
+    ```
+
+#### Build and Install
+
+  > Navigate to the project folder in your terminal then run the following commands.
+
+  * Build:
+            $ npm build
+  * Install:
+             $ npm install
+  * Run:
+             $ npm serve
+
 
 ## Specifications
 
 | Specification | Input | Output |
 | --- | --- | --- |
-| Medical issue submitted and list of Dr's that support that issue are returned | Back Pain | List of Dr's in Portland that can treat Back Specification
-| Name of Doctor submitted and list of Doctors with that name returned | Last-Name: Johnson | Returned: List of Dr's with Last-Name of Johnson
+| Medical condition entered by user. Matching Doctors  will be returned returned. | Back Pain | List of Dr's in Portland that can treat Back Specification
+| Name of Doctor submitted and list of Doctors with that name returned | First-Name, Last-Name or Both | List of Dr's whose name  match search criteria
 
-* If query response includes any doctors, a certain
-  *  RETURN: first name, last name, address, phone number, website and whether or not the doctor is accepting new patients
-* If the API call results in an error, the application should return a notification that states what the error is.
-* If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria. (This is not an error so it should be handled separately from any errors.)
+* Medical condition and Doctors name can both be used to narrow down search.
+* If a match is found the following information will be shown.
+ *  First Name
+ *  Last Name
+ *  Address
+ *  Phone Number
+ *  Website
+ *  Whether or not the doctor is accepting new patients
+* If the API call results in an error, the application will return a notification that states what the error is.
+* If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria.
 
-## Setup/Installation Requirements
-
-* To view project code, _clone repository from_
-* To view project, _open in web browser_
-  *  https://adrianmess.github.io/doctor-lookup/
-
-  ### Install project locally:
-
-      * Clone this project
-      *
-
-#### API Key
-
-You will need an API Key from BetterDoctor. Visit the [BetterDoctor API] (https://developer.betterdoctor.com/) site and click “Get a free API key”.
-  After you sign up, your API key will be listed on the front page under **CREDENTIALS** (ex: “**Key** 22065b1d…..”) or under My Account > Applications.
-
-  How to use your API Key:
-    * Create a .env file in the root directory of the project.
-    * Add the API key in the .env file as shown below. No brackets:
-    ```
-    exports.apiKey=[YOUR-API-KEY]
-    ```
-
-* To Install locally:
-  * Clone this repository
-  * Run npm install to install appropriate dependencies
-  * Run npm start to run development environment
 
 ## Known Bugs
   * No known bugs at this time.
@@ -65,6 +89,8 @@ You will need an API Key from BetterDoctor. Visit the [BetterDoctor API] (https:
 * Karma
 * Babel
 * BetterDoctor API
+
+
 
 ## License
 
