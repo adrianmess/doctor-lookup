@@ -1,5 +1,8 @@
 # **Doctor Lookup**
-  Powered By: [BetterDoctor API](https://developer.betterdoctor.com/) [logo]: http://betterdoctor.com/assets/img/bd-logo.svg
+  Powered By: [BetterDoctor](https://developer.betterdoctor.com/)  <IMG SRC="https://developer.betterdoctor.com/images/logo-round-tiny.png"><br>
+
+
+
 
 #### By Adrian Messado
 [Adrian Messado](https://github.com/adrianmess)
@@ -27,7 +30,7 @@ This website utilizes the [BetterDoctor API](https://developer.betterdoctor.com/
 #### BetterDoctor API Key
 
   After you sign up your API key will be listed on the main developer page under **CREDENTIALS**.
-  *  
+  > Note: API Key can also be found under - My Account > Applications
 
 
     CREDENTIALS
