@@ -47,8 +47,6 @@ This website utilizes the [BetterDoctor API](https://developer.betterdoctor.com/
 
   > Navigate to the project folder in your terminal then run the following commands.
 
-  * Build:
-            $ npm build
   * Install:
              $ npm install
   * Run:
