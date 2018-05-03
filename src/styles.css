@@ -7,7 +7,8 @@ html, body {
   min-height: 100%;
 }
 body {
-  background: url("./img/background.jpg");
+  background: url("./img/background.jpg") opacity: 0.5;
+  /* opacity: 50%; */
   -webkit-background-size: cover;
  -moz-background-size: cover;
  -o-background-size: cover;
@@ -16,8 +17,9 @@ body {
 }
 
 
-div.row {
-  margin-right: 80px;
+div.col-md-8 {
+  margin-right: 50%;
+  transform: translate(50%, 10%)
 }
 h3 {
   text-align: center;
@@ -78,4 +80,15 @@ span.names {
 div.showResults {
   align-items: center;
   margin-top: 100px;
+}
+
+
+#doctorInfo {
+  width: 25rem;
+}
+
+/* Hide card  */
+#doctorInfo  {
+  justify-content: center;
+  display: none;
 }

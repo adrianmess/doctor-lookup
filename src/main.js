@@ -7,6 +7,7 @@ import { BetterDoctor } from './class.js';
 $(document).ready(function() {
   $('#buttonSub').click(function() {
     $('.clear').remove();
+
     let doctorName = $("#doctorName").val();
     let medicalCondition = $('#medicalCondition').val();
     $('#doctorName').val('');
@@ -17,7 +18,6 @@ $(document).ready(function() {
 
       bDoctorData.then(function(response) {
         let body = JSON.parse(response);
-        // console.log(response);
       $.each(body.data, function(i, data){
         let firstName = data.profile.first_name;
         let lastName = data.profile.last_name;
@@ -39,8 +39,9 @@ $(document).ready(function() {
             return siteLink;
           }
         };
-        let finalSite = showSiteLink(websiteLink);
-        $('.showResults').append('<span class=\'clear\'><table><th>' + '<span class=\'names\'>' + firstName + ' ' + lastName + '</span>' + contact + phone + '<br>' + address + '<br>' + 'Accepting new patients: ' + newP + '<br>' + 'Website: ' + finalSite + '<p></th><td>' + picture + '</td></table></span>');
+        let finalSiteLink = showSiteLink(websiteLink);
+        $('.card-text').append('<span class=\'clear\'><table><th>' + '<span class=\'names\'>' + firstName + ' ' + lastName + '</span>' + contact + phone + '<br>' + address + '<br>' + 'Accepting new patients: ' + newP + '<br>' + 'Website: ' + finalSiteLink + '<p></th><td>' + picture + '</td></table></span>')
+        $('#doctorInfo').show();
       });
     });
 
