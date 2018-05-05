@@ -17,12 +17,14 @@ body {
    background-repeat:   no-repeat;
  }
 
+
 .custom-card {
   background-color: rgba(47, 53, 71, 0.6);
   color: white;
-  max-width: 40%;
-  padding-left: 5%;
-  padding-right: 5%;
+  max-width: 60%;
+  min-width: 120px;
+  /* padding-left: 5%;
+  padding-right: 5%; */
   padding-top: 2%;
   margin-top: 10%;
 }
@@ -77,8 +79,11 @@ input, label, button {
   display: flex;
 }
 
-button {
+button, input {
   margin-top: 10px;
+  resize: horizontal;
+  width: 80%;
+  min-width: 100px;
 }
 
 .btn-secondary {
@@ -154,4 +159,11 @@ div.showResults {
   div.jumbotron.jumbotron-fluid {
     padding: 15px;
   }
+}
+
+col-md-8 {
+  resize: horizontal;
+  width: 80%;
+  min-width: 100px;
+
 }
