@@ -13,6 +13,7 @@ A website where users can enter a medical condition or the name of a Doctor and 
 
 This website utilizes the [BetterDoctor API](https://developer.betterdoctor.com/) for retrieval of provider data.
 
+<img src="./src/img/BetterDr-preview.gif" style="margin-left:60px">
 
 ## Setup/Installation Requirements
 
