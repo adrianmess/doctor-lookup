@@ -11,10 +11,10 @@ class BetterDoctor{
         } else {
           reject(Error(request.statusText));
         }
-      }
+      };
       request.open("GET", url, true);
       request.send();
     });
   }
 }
-export {BetterDoctor}
+export {BetterDoctor};
