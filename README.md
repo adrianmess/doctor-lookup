@@ -9,7 +9,7 @@
 ## Description
 A website where users can enter a medical condition or the name of a Doctor and list of the top 10 Doctors that match the search criteria will be shown. The data returned will contain the name, contact information, business address and a link to their website if one is available.
 
-* Search results are limited to a 25 mile radius of Portland, OR.  
+* Search results are limited to a 25 mile radius of Portland, OR.
 
 This website utilizes the [BetterDoctor API](https://developer.betterdoctor.com/) for retrieval of provider data.
 
@@ -25,6 +25,7 @@ This website utilizes the [BetterDoctor API](https://developer.betterdoctor.com/
 
 #### Clone
   * Clone this repo to your local machine using https://github.com/adrianmess/doctor-lookup
+
         $ git clone https://github.com/adrianmess/doctor-lookup
 
 
